@@ -26,6 +26,8 @@ The challenge consists of solving a curated list of LeetCode problems, covering 
 1. Arsh Goyal for initiating the [45 Days of LeetCode Challenge](https://www.proelevate.in/dsa-practice/arsh-dsa-sheet).
 2. The LeetCode community for their support and collaboration.
 
+***
+
 > [!IMPORTANT]
 > Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
 
