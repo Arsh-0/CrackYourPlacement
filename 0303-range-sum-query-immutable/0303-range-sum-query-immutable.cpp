@@ -2,14 +2,13 @@ class NumArray {
     int * arr;
 public:
     NumArray(vector<int>& nums) {
-        arr = new int[nums.size()];
-        for(int i = 0; i < nums.size(); ++i) arr[i] = nums[i];
+        arr = new int[nums.size() + 1]; // extra for the zeroth starting point.
+        arr[0] = 0;
+        for(int i = 1; i <= nums.size(); ++i) arr[i] = arr[i - 1] + nums[i - 1]; // created a prefix sum array instead.
     }
     
     int sumRange(int left, int right) {
-        int sum = 0;
-        for(int i = left; i <= right; ++i) sum += arr[i];
-        return sum;
+        return arr[right + 1] - arr[left];
     }
 };
 
