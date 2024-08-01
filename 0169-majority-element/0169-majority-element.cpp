@@ -1,8 +1,20 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        // because the majority element occurs for half of the list, if sorted must be the element at the mid.
-        sort(nums.begin(), nums.end());
-        return nums[nums.size() / 2];
+        /* Brute force takes O(nlogn) for sorting, while applying Moore's voting algorithm, we can optimize this to O(n). */
+        int count = 1, candidate = nums[0];
+        for(int i = 1; i < nums.size(); ++i)
+        {
+            if(candidate == nums[i]) count++;   // if same as candidate, increase support else decrease it
+            else count--;
+
+            if(count == 0)  // once an becomes minority, set the current element as new prospective candidate
+            {
+                candidate = nums[i];
+                count = 1;
+            }
+        }
+
+        return candidate;
     }
 };
